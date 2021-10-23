@@ -12,6 +12,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\AIGame.Game\AIGame.Game.csproj" />
+      <ProjectReference Include="..\AIGame.Models\AIGame.Models.csproj" />
     </ItemGroup>
 
 </Project>

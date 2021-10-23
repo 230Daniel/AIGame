@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIGame", "AIGame\AIGame.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIGame.Test", "AIGame.Test\AIGame.Test.csproj", "{9C0ACE84-0230-4C8A-8707-592AEF09B1D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIGame.Models", "AIGame.Models\AIGame.Models.csproj", "{522122E5-29E3-4DFB-995E-17BC876B472A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{9C0ACE84-0230-4C8A-8707-592AEF09B1D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C0ACE84-0230-4C8A-8707-592AEF09B1D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C0ACE84-0230-4C8A-8707-592AEF09B1D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{522122E5-29E3-4DFB-995E-17BC876B472A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{522122E5-29E3-4DFB-995E-17BC876B472A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{522122E5-29E3-4DFB-995E-17BC876B472A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{522122E5-29E3-4DFB-995E-17BC876B472A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

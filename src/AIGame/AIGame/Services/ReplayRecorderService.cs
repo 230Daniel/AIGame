@@ -10,42 +10,43 @@ namespace AIGame.Services
     internal class ReplayRecorderService : IReplayRecorderService
     {
         private readonly IMapper _mapper;
-        private string _record;
+        
+        private GameStateModel _initialGameState;
+        private List<TurnModel> _turns;
+        private GameStateModel _finalGameState;
 
         public ReplayRecorderService(IMapper mapper)
         {
             _mapper = mapper;
+            _turns = new();
         }
 
         public void RecordInitialGameState(GameState gameState)
         {
-            var replay = new ReplayModel
-            {
-                InitialGameState = _mapper.Map<GameStateModel>(gameState),
-                Turns = new()
-            };
-            _record = JsonSerializer.Serialize(replay);
+            _initialGameState = _mapper.Map<GameStateModel>(gameState);
         }
 
         public void RecordTurn(Turn turn)
         {
-            var replay = JsonSerializer.Deserialize<ReplayModel>(_record);
-            replay.Turns.Add(_mapper.Map<TurnModel>(turn));
-            _record = JsonSerializer.Serialize(replay);
+            _turns.Add(_mapper.Map<TurnModel>(turn));
         }
 
         public void RecordFinalGameState(GameState gameState)
         {
-            var replay = JsonSerializer.Deserialize<ReplayModel>(_record);
-            replay.FinalGameState = _mapper.Map<GameStateModel>(gameState);
-            _record = JsonSerializer.Serialize(replay);
+            _finalGameState = _mapper.Map<GameStateModel>(gameState);
         }
 
         public void Save()
         {
-            var replay = JsonSerializer.Deserialize<ReplayModel>(_record);
-            _record = JsonSerializer.Serialize(replay, new JsonSerializerOptions{WriteIndented = true});
-            Console.WriteLine(_record);
+            var replay = new ReplayModel
+            {
+                InitialGameState = _initialGameState,
+                Turns = _turns.ToArray(),
+                FinalGameState = _finalGameState
+            };
+
+            var json = JsonSerializer.Serialize(replay, new JsonSerializerOptions {WriteIndented = true});
+            Console.Write(json);
         }
     }
 }

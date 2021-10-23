@@ -9,21 +9,16 @@ namespace AIGame.Services
     internal class TurnGeneratorService : ITurnGeneratorService
     {
         private readonly IServiceProvider _serviceProvider;
-        private readonly ILogger<TurnGeneratorService> _logger;
-        private readonly GameConfiguration _options;
         private readonly Type _defaultAgentType;
 
         public TurnGeneratorService(IServiceProvider serviceProvider, ILogger<TurnGeneratorService> logger, IOptions<GameConfiguration> options)
         {
             _serviceProvider = serviceProvider;
-            _logger = logger;
-            _options = options.Value;
+            _defaultAgentType = options.Value.DefaultAgentType ?? options.Value.AgentTypes.FirstOrDefault();
             
-            _defaultAgentType = _options.DefaultAgentType ?? _options.AgentTypes.FirstOrDefault();
-            
-            if (_options.DefaultAgentType is null && _options.AgentTypes.Length > 1)
+            if (options.Value.DefaultAgentType is null && options.Value.AgentTypes.Length > 1)
             {
-                _logger.LogWarning("More than one agent type is registered but no default was set, using {AgentType} as the default", _defaultAgentType.FullName);
+                logger.LogWarning("More than one agent type is registered but no default was set, using {AgentType} as the default", _defaultAgentType.FullName);
             }
         }
         
