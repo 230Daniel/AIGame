@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIGame.Core", "AIGame.Core\AIGame.Core.csproj", "{5D3DD41B-EE89-4308-91A9-F88BD15560D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIGame.Game", "AIGame.Game\AIGame.Game.csproj", "{5D3DD41B-EE89-4308-91A9-F88BD15560D4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIGame", "AIGame\AIGame.csproj", "{A0BB3AD8-49A8-48CF-9895-3855D2BEE144}"
 EndProject
