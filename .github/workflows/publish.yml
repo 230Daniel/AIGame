@@ -20,7 +20,7 @@ jobs:
       - name: Get Build Version
         run: |
           $Date =  Get-Date -format "yyyy-MM-dd"
-          $BuildNumber = $GITHUB_RUN_NUMBER
+          $BuildNumber = $Env:GITHUB_RUN_NUMBER
           echo "BUILD_VERSION=$Date.$BuildNumber" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
         shell: pwsh
 
