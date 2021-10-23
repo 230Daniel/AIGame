@@ -2,7 +2,7 @@
 
 namespace AIGame.Game
 {
-    public class GameConfiguration
+    internal class GameConfiguration
     {
         public Type DefaultAgentType { get; set; }
         public Type[] AgentTypes { get; set; }

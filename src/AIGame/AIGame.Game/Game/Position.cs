@@ -2,8 +2,8 @@
 {
     public class Position
     {
-        public int X { get; internal set; }
-        public int Y { get; internal set; }
+        public int X { get; }
+        public int Y { get; }
 
         public Position(int x, int y)
         {

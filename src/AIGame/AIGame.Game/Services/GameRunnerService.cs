@@ -36,7 +36,7 @@ namespace AIGame.Game
             var gameState = new GameState();
             _replayRecorderService?.RecordInitialGameState(gameState);
             
-            for (var i = 0; i < 3; i++)
+            for (var i = 0; i < 500; i++)
             {
                 var turn = _turnGeneratorService.GetTurn(gameState);
                 gameState.TakeTurn(turn);

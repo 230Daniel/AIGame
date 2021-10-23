@@ -5,7 +5,7 @@ namespace AIGame.Game
     public class GameState
     {
         public int TurnNumber { get; private set; }
-        public List<Agent> Agents { get; init; }
+        public List<Agent> Agents { get; }
 
         public GameState()
         {

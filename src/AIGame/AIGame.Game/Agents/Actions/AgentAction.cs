@@ -1,6 +1,6 @@
 ﻿namespace AIGame.Game
 {
-    public abstract  class AgentAction
+    public abstract class AgentAction
     {
         public int AgentId { get; }
         

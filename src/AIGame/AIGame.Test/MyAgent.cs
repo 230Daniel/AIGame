@@ -6,7 +6,7 @@ namespace AIGame.Test
     {
         public override AgentAction GetAction(GameState gameState)
         {
-            return gameState.TurnNumber % 2 == 0 ? Move(Direction.Up) : Move(Direction.Right);
+            return Move(Direction.Up);
         }
     }
 }
