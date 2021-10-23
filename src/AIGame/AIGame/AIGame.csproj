@@ -2,6 +2,11 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
+        <RootNamespace>AIGame</RootNamespace>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>AIGame</Title>
+        <Authors>Daniel Baynton</Authors>
+        <Description>A game you play by writing code to control agents </Description>
     </PropertyGroup>
 
     <ItemGroup>
