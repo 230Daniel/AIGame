@@ -7,6 +7,6 @@
 
         public abstract AgentAction GetAction(GameState gameState);
 
-        protected MoveAgentAction Move(Direction direction) => new(this, direction);
+        protected MovingAgentAction Move(Direction direction) => new(Id, direction);
     }
 }

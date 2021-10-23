@@ -29,16 +29,20 @@ namespace AIGame.Services
         
         public Turn GetTurn(GameState gameState)
         {
-            var turn = new Turn();
+            var turn = new Turn
+            {
+                AgentActions = new()
+            };
             
-            // Convert all brainless agents to the user's default agent
+            // Convert all default agents to the user's default agent
             for (var i = 0; i < gameState.Agents.Count; i++)
             {
                 var agent = gameState.Agents[i];
-                if (agent is not DefaultAgent)
+                if (agent.GetType() != typeof(DummyAgent))
                     continue;
                 
                 var newAgent = _serviceProvider.GetService(_defaultAgentType) as Agent;
+                newAgent.Id = agent.Id;
                 newAgent.Position = agent.Position;
                 
                 gameState.Agents[i] = newAgent;

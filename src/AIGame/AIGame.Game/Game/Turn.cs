@@ -4,11 +4,6 @@ namespace AIGame.Game
 {
     internal class Turn
     {
-        public List<AgentAction> AgentActions { get; }
-
-        public Turn()
-        {
-            AgentActions = new();
-        }
+        public List<AgentAction> AgentActions { get; init; }
     }
 }

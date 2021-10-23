@@ -10,11 +10,13 @@ namespace AIGame.Game
     {
         private readonly ILogger<GameRunnerService> _logger;
         private readonly ITurnGeneratorService _turnGeneratorService;
+        private readonly IReplayRecorderService _replayRecorderService;
 
-        public GameRunnerService(ILogger<GameRunnerService> logger, ITurnGeneratorService turnGeneratorService)
+        public GameRunnerService(ILogger<GameRunnerService> logger, ITurnGeneratorService turnGeneratorService, IReplayRecorderService replayRecorderService = null)
         {
             _logger = logger;
             _turnGeneratorService = turnGeneratorService;
+            _replayRecorderService = replayRecorderService;
         }
         
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -29,16 +31,21 @@ namespace AIGame.Game
             }
         }
 
-        private void RunGame()
+        public GameState RunGame()
         {
             var gameState = new GameState();
-
-            for (var i = 0; i < 100; i++)
+            _replayRecorderService?.RecordInitialGameState(gameState);
+            
+            for (var i = 0; i < 3; i++)
             {
                 var turn = _turnGeneratorService.GetTurn(gameState);
                 gameState.TakeTurn(turn);
-                _logger.LogInformation($"The agent is at {gameState.Agents[0].Position.X}, {gameState.Agents[0].Position.Y}");
+                _replayRecorderService?.RecordTurn(turn);
             }
+
+            _replayRecorderService?.RecordFinalGameState(gameState);
+            _replayRecorderService?.Save();
+            return gameState;
         }
     }
 }

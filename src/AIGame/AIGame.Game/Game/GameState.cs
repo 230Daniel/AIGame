@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 
 namespace AIGame.Game
 {
     public class GameState
     {
         public int TurnNumber { get; private set; }
-        public List<Agent> Agents { get; }
+        public List<Agent> Agents { get; init; }
 
         public GameState()
         {
-            Agents = new(){ new DefaultAgent { Id = 0, Position = new(0, 0) } };
+            Agents = new(){ new DummyAgent { Id = 0, Position = new(0, 0) } };
         }
 
         internal void TakeTurn(Turn turn)

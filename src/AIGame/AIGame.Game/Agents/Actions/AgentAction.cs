@@ -1,14 +1,14 @@
 ﻿namespace AIGame.Game
 {
-    public abstract class AgentAction
+    public abstract  class AgentAction
     {
-        public Agent Agent { get; }
-
-        protected AgentAction(Agent agent)
-        {
-            Agent = agent;
-        }
+        public int AgentId { get; }
         
+        protected AgentAction(int agentId)
+        {
+            AgentId = agentId;
+        }
+
         internal abstract void Execute(GameState gameState);
     }
 }

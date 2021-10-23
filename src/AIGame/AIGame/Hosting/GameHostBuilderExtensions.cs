@@ -28,6 +28,9 @@ namespace AIGame.Hosting
                 
                 services.AddHostedService<GameRunnerService>();
                 services.AddSingleton<ITurnGeneratorService, TurnGeneratorService>();
+                services.AddSingleton<IReplayRecorderService, ReplayRecorderService>();
+                services.AddAutoMapper(Assembly.GetExecutingAssembly());
+                
                 services.Configure<GameConfiguration>(x =>
                 {
                     x.DefaultAgentType = gameContext.DefaultAgentType;
