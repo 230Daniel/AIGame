@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIGame.Core", "AIGame.Core\AIGame.Core.csproj", "{5D3DD41B-EE89-4308-91A9-F88BD15560D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIGame", "AIGame\AIGame.csproj", "{A0BB3AD8-49A8-48CF-9895-3855D2BEE144}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIGame.Test", "AIGame.Test\AIGame.Test.csproj", "{9C0ACE84-0230-4C8A-8707-592AEF09B1D7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D3DD41B-EE89-4308-91A9-F88BD15560D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D3DD41B-EE89-4308-91A9-F88BD15560D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D3DD41B-EE89-4308-91A9-F88BD15560D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D3DD41B-EE89-4308-91A9-F88BD15560D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0BB3AD8-49A8-48CF-9895-3855D2BEE144}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0BB3AD8-49A8-48CF-9895-3855D2BEE144}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0BB3AD8-49A8-48CF-9895-3855D2BEE144}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0BB3AD8-49A8-48CF-9895-3855D2BEE144}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C0ACE84-0230-4C8A-8707-592AEF09B1D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C0ACE84-0230-4C8A-8707-592AEF09B1D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C0ACE84-0230-4C8A-8707-592AEF09B1D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C0ACE84-0230-4C8A-8707-592AEF09B1D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
